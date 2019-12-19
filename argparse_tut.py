@@ -23,16 +23,20 @@ if __name__ == '__main__':
 	print('arg2 is ', args.number2)
 	print('operation to be performed is ', args.operation) # its string but still using, not needed
 	
+	result = None
+	
 	if args.operation == 'add':
-		print('solution is ', args.number1 + args.number2)
+		result = args.number1 + args.number2
 	elif args.operation == 'mul':
-		print('solution is ', args.number1 * args.number2)
+		result = args.number1 * args.number2
 	elif args.operation == 'sub':
-		print('solution is ', args.number1 - args.number2)
+		result = args.number1 - args.number2
 	elif args.operation == 'div':
-		print('solution is ', args.number1 / args.number2)
+		result = args.number1 / args.number2
 	else:
-		print('Invalid Operation')
+		result = 'Invalid Operation'
+	
+	print('solution is ', result)
 		
 # how to run the program
 # python filename -h  for help
