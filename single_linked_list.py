@@ -21,12 +21,37 @@ class LinkedList:
 		self.head.next = curr
 
 	def insert_at_end(self, data):
-		pass
+		new_node = Node(data)
+		curr = self.head
+		if self.head is None:
+			self.head = new_node
+		while curr.next:
+			curr = curr.next
+		curr.next = new_node
 
-	def insert_at_pos(self, pos, val):
-		pass
+	def insert_at_pos(self, pos, data):
+		new_node = Node(data)
+		curr = self.head
+		if self.head is None:
+			print('Empty list found')
+			self.head = new_node
+			return
+		count = 1
+		while curr:
+			if count == pos:
+				temp = curr.next
+				curr.next = new_node
+				new_node.next = temp
+				return
+			curr = curr.next
+			count += 1
+		print('position not found')
+		return
 
 	def reverse(self):
+		pass
+
+	def search(self):
 		pass
 
 	def print_list(self):
@@ -35,9 +60,6 @@ class LinkedList:
 			print(curr.data, end=' ')
 			curr = curr.next
 		print('\n')
-
-	def search(self):
-		pass
 
 
 sll = LinkedList()
@@ -51,7 +73,11 @@ while True:
 	print('6: to print the linked list')
 	print('7: to exit')
 
-	choice = int(input())
+	try:
+		choice = int(input())
+	except ValueError:
+		print('OOPS wrong input')
+		continue
 
 	if choice == 1:
 		val = int(input('Enter the node value'))
@@ -61,7 +87,7 @@ while True:
 		sll.insert_at_end(val)
 	elif choice == 3:
 		val = int(input('Enter the node value'))
-		pos = int(input('Enter the position for the node to insert'))
+		pos = int(input('Enter position for node to insert, beginning at 1'))
 		sll.insert_at_pos(pos, val)
 	elif choice == 4:
 		sll.reverse()
