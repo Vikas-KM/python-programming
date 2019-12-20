@@ -49,10 +49,30 @@ class LinkedList:
 		return
 
 	def reverse(self):
-		pass
+		curr = self.head
+		if self.head is None:
+			print('Empty Linked List')
+			return
+		prev = None
+		while curr:
+			temp = curr.next
+			curr.next = prev
+			prev = curr
+			curr = temp
+		self.head = prev
 
-	def search(self):
-		pass
+	def search(self, data):
+		curr = self.head
+		if self.head is None:
+			print('Empty List')
+			return
+		while curr:
+			if curr.data == data:
+				print('Element found')
+				return
+			curr = curr.next
+		print('Element Not found')
+		return
 
 	def print_list(self):
 		curr = self.head

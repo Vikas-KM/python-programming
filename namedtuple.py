@@ -32,4 +32,3 @@ print(color[0])
 print(color.red)
 
 # Above code is readble and easy
-
