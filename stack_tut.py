@@ -26,7 +26,7 @@ class Stack:
 
     def pop(self):
         if self.head is None:
-            print('Nothing to pop, empty list')
+            print('Nothing to pop, empty stack')
             return
         del_node = self.tail
         temp = self.tail.prev
@@ -39,10 +39,34 @@ class Stack:
         self.tail.next = None
         print('deleted node ', del_node.data)
 
+    def size(self):
+        curr = self.head
+        count = 0
+        if self.head is None:
+            print(' stack size is ', count)
+            return
+        while curr != self.tail.next:
+            count += 1
+            curr = curr.next
+        print(' stack size is ', count)
+
+    def is_empty(self):
+        if self.head is None:
+            print('Yes, stack is empty')
+            return
+        print(f'No, stack is not empty')
+
 
 stk = Stack()
+stk.is_empty()
 stk.push(1)
 stk.push(2)
+stk.push(3)
+stk.is_empty()
+stk.size()
 stk.pop()
 stk.pop()
 stk.pop()
+stk.pop()
+stk.is_empty()
+stk.size()
