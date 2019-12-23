@@ -59,6 +59,20 @@ def merger(list_a, list_b):
             list_b = list_b.next     
     return curr.next   
 
+# method 2 using recursion
+def merger_recur(list_a, list_b):
+    new_list = None
+    if list_b is None:
+        return list_a
+    elif list_a is None:
+        return list_b
+    elif list_a.data <= list_b.data:
+        new_list = list_a
+        new_list.next = merger_recur(list_a.next, list_b)
+    else:
+        new_list = list_b
+        new_list.next = merger_recur(list_a, list_b.next)
+    return new_list
 
 first_list = LinkedList()
 first_list.append(2)
@@ -77,5 +91,8 @@ second_list.append(25)
 second_list.print_list()
 
 merge_list = LinkedList()
+merge_list_recur = LinkedList()
 merge_list.head = merger(first_list.head, second_list.head)
+merge_list_recur.head = merger_recur(first_list.head, second_list.head)
 merge_list.print_list()
+merge_list_recur.print_list()
