@@ -8,6 +8,7 @@
 # Loading the required libraries
 from bs4 import BeautifulSoup as bs
 import requests
+import re
 
 
 r = requests.get('https://en.wikipedia.org/wiki/List_of_Indian_states_and_union_territories_by_literacy_rate')
@@ -18,7 +19,9 @@ soup = bs(r.content)
 print(soup.title.string)
 # print(soup.prettify())
 
-tables = soup.find_all('table', attrs={'class':'wikitable'})
+tables = soup.find_all('table', class_= 'wikitable sortable')
+# print(tables)
 for table in tables:
     print(table)
     print('--'*30)
+
