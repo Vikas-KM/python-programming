@@ -43,32 +43,32 @@ val = reduce(lambda x, y: x + y, lst)
 print(val)
 
 
-def multipliers1():
+def multipliers_1():
     return [lambda x: i * x for i in range(4)]
 
 
-print([m(2) for m in multipliers1()])
+print([m(2) for m in multipliers_1()])
 
 
-def multipliers2():
+def multipliers_2():
     for i in range(4): yield lambda x: i * x
 
 
-print([m(2) for m in multipliers2()])
+print([m(2) for m in multipliers_2()])
 
 
-def multipliers3():
+def multipliers_3():
     return [lambda x, i=i: i * x for i in range(4)]
 
 
-print([m(2) for m in multipliers3()])
+print([m(2) for m in multipliers_3()])
 
 
-def multipliers4():
+def multipliers_4():
     return (lambda x: i * x for i in range(4))
 
 
-print([m(2) for m in multipliers4()])
+print([m(2) for m in multipliers_4()])
 
 
 def foo(k):
