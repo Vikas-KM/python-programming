@@ -75,8 +75,28 @@ def foo(k):
     k = [1]
 
 
-q = [0]
-foo(q)
-print(q)
+# CAP WORDS
 
+import string
 
+s = 'The quick brown fox jumped over the lazy dog.'
+
+print(string.capwords(s))
+
+values = {
+    'name': 'vikas',
+    'loves': 'python'
+}
+
+# STRING TEMPLATES
+t = string.Template('my name is $name and loves $loves')
+
+print(t.substitute(values))
+try:
+    x = string.Template('my name is $name1 and loves $loves1')
+    print(x.substitute(values))
+except KeyError as err:
+    print('ERROR ', str(err))
+
+x = string.Template('my name is $name and loves $loves1')
+print(x.safe_substitute(values))

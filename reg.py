@@ -18,6 +18,5 @@ matches = pattern.finditer(text_to_search)
 
 m = re.match(r'def', text_to_search)    # only matches beginning
 s = re.search(r'def', text_to_search)   # matches anywhere in the string
-print(m)
-print(s)
-
+print(m)    # returns None
+print(s)    # returns Matched Object

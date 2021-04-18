@@ -41,3 +41,14 @@ if __name__ == '__main__':
 # how to run the program
 # python filename -h  for help
 # python filename 10 20 (add/sub/mul/div)
+
+#
+# def sum_(a,b):
+# 	return a+b
+#
+# parser = argparse.ArgumentParser()
+# parser.add_argument('a')
+# parser.add_argument('b')
+#
+# args = parser.parse_args()
+# sum_(args.a, args.b)
